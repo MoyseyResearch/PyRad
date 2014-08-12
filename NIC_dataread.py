@@ -80,6 +80,7 @@ def ekko2py_NIC(filename):
     for trace in range(0,header['ntraces']):
         
         # Read the trace header (first 40 bytes)       
+	# There is a problem here somewhere with reading the bytes of the traces
         headersize = S.unpack('>H',f.read(2));
         headerID = S.unpack('>H',f.read(2));
         count = S.unpack('>L',f.read(4));
